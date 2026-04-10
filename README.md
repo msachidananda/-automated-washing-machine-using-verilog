@@ -137,40 +137,12 @@ The system is implemented as a **Moore FSM**, where outputs depend on the curren
 
 ---
 
-## 🔁 Working Principle
-
-1. System starts in `CHECK_DOOR` state after reset  
-2. Waits for user input (`start`) and safety condition (`door_close`)  
-3. Proceeds through washing stages in sequence:
-   - Fill → Detergent → Wash → Drain → Spin  
-4. Each stage depends on:
-   - Sensor signals
-   - Timer outputs  
-5. Once all stages complete, system asserts `done` and resets
-
----
-
 ## 📊 Design Highlights
 
 - **Deterministic Control:** FSM ensures predictable behavior
 - **Modular Design:** Easy to expand with additional features (e.g., rinse cycles)
 - **Hardware Efficient:** Minimal logic with clear state transitions
 - **Real-World Mapping:** Closely resembles actual washing machine operation
-
----
-
-## 🛠️ How to Run
-
-1. Open HDL simulator (ModelSim / Vivado / etc.)
-2. Compile the Verilog module
-3. Create a testbench to simulate:
-   - Clock and reset
-   - Sensor inputs
-4. Apply input sequences to mimic real washing conditions
-5. Observe outputs:
-   - State transitions
-   - Control signals
-   - `done` signal
 
 ---
 
@@ -191,7 +163,4 @@ The system is implemented as a **Moore FSM**, where outputs depend on the curren
 - Add display interface (LCD/7-segment)
 - Integrate IoT-based remote control
 
----
 
-## 👨‍💻 Author
-Developed as part of a digital systems / Verilog design project.
